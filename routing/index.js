@@ -1,6 +1,8 @@
 const express =  require('express'); //Require the use of express.js library
 const app = express(); //Initialize server
+const routes = require('./routes') //Require the use of the routes.js file
 
+app.use('/', routes); //Use the routes in routes.js
 
 app.get('/', (req, res) => { //Basic route for root url
     res.send('HELLO WORLD'); //Respond with hello world
