@@ -7,7 +7,7 @@ app.use(express.static('public')); // ENABLE SERVING OF STATIC FILES FROM ./publ
 //It makes the public dir the root in a sense
 
 
-app.get('/', (req, res) => { //Get a list of all usernames
+app.get('/', (req, res) => {
 
 })
 
