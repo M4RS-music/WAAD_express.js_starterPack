@@ -19,7 +19,7 @@ app.get('/user', (req, res) => { //Post a new user to the system
       username: req.body.username, //Access get query
       }
 
-      if (usernames.contains(result.username)) {
+      if (usernames.indexOf(result.username) != -1) {
         res.send('TRUE');
       } else{
         res.send('FALSE');

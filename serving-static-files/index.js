@@ -3,12 +3,10 @@ const app = express(); //Initialize server
 
 app.use(express.json()); //ENABLE USE OF JSON
 app.use(express.static('public')); // ENABLE SERVING OF STATIC FILES FROM ./public
-//That means that anyone who types in localhost:3000/test will access the test html
-//It makes the public dir the root in a sense
 
 
 app.get('/', (req, res) => {
-
+  res.sendFile('test.html', { root: 'public' }); //Send file test.html from dir public
 })
 
 

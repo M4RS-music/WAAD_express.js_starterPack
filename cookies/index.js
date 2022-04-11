@@ -7,8 +7,7 @@ app.use(cookieParser()); //Use cookies
 var privateValue = null;
 
 app.get('/getCookie', function(req, res){
-   res.cookie('name', 'hellowworld', {expire: 600000 + Date.now(),
-                                      allowedToPost: true}).send('cookie set');
+   res.cookie('name', 'hellowworld', 'allowedToPost', true, {expire: 600000 + Date.now()}).send('cookie set');
    //Sets cookie with name hellowworld that expires after 60000ms that has a value called allowedToPost
 });
 
@@ -18,7 +17,8 @@ app.get('/removeCookie', function(req, res){
 });
 
 app.post('/setPrivateValue', function(req, res){
-  var allowedToPost = req.cookies.hellowworld.allowedToPost; //Access cookie value
+  console.log(req.cookies);
+  var allowedToPost = req.cookies.allowedToPost; //Access cookie value
   if (allowedToPost) {
     privateValue = 1;
 
